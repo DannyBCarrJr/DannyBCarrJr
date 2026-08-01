@@ -1,4 +1,4 @@
-# Hey, I'm Danny — aka ZeroShade
+# Hey, I'm Danny
 
 Security Engineer | Builder | Bug Bounty Hunter
 
