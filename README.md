@@ -47,9 +47,18 @@ it.
 [carrdigital.dev/writing](https://carrdigital.dev/writing/), accuracy-first, every article
 with a provenance section separating what I measured from what I am citing.
 
+- [How much certificate can you afford?](https://carrdigital.dev/writing/how-much-certificate-can-you-afford/)
 - [Hybrid certificates, weighed](https://carrdigital.dev/writing/hybrid-certificates-weighed/)
 - [The load-bearing word](https://carrdigital.dev/writing/the-load-bearing-word/)
 - [What the AI actually broke (and what it didn't)](https://carrdigital.dev/writing/what-the-ai-actually-broke/)
+
+## Tools
+
+**[Handshake budget calculator](https://carrdigital.dev/tools/handshake-budget/)**: work out
+whether a post-quantum certificate chain fits inside TCP's initial congestion window, and
+which client stacks can actually complete the handshake. Backed by the measured corpus
+above rather than estimates, and it tells you which of its numbers are measured and which
+are modelled.
 
 ## Etergis
 
