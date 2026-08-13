@@ -80,11 +80,22 @@ with a provenance section separating what I measured from what I am citing.
 
 ## Tools
 
-**[Handshake budget calculator](https://carrdigital.dev/tools/handshake-budget/)**: work out
-whether a post-quantum certificate chain fits inside TCP's initial congestion window, and
-which client stacks can actually complete the handshake. Backed by the measured corpus
-above rather than estimates, and it tells you which of its numbers are measured and which
-are modelled.
+Three, all free, all backed by the corpora above rather than by estimates. Each one tells
+you which of its numbers are measured and which are projected.
+
+**[Handshake budget](https://carrdigital.dev/tools/handshake-budget/)** works out whether a
+post-quantum certificate chain fits inside TCP's initial congestion window, and which
+client stacks can actually complete the handshake.
+
+**[Chain check](https://carrdigital.dev/tools/chain-check/)** looks up any top-10k domain,
+shows its real certificate chain as measured, and checks whether that same chain still fits
+the server's first flight once ML-DSA signs it. Per-site, from the measured data, with the
+assumptions stated.
+
+**[Certificate decoder](https://carrdigital.dev/tools/certificate-decoder/)** takes a
+pasted X.509 certificate and shows its structure: tags, lengths, byte offsets, decoded
+object identifiers, and key usage bits. It runs entirely in your browser and uploads
+nothing, which for a tool that accepts certificates is the only defensible design.
 
 ## Etergis
 
