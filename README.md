@@ -8,6 +8,50 @@ I publish measurements rather than opinions. Every claim in my work is labeled *
 (cited to a standard or vendor document, not re-derived), or **Proposed** (designed, not
 yet shipped or measured). The labels are dull on purpose.
 
+## Measured corpora, archived and citable
+
+Three repositories, each one a question nobody had published measurements for. Every cell
+is a script plus its captured output, versions pinned per cell, and each carries a
+`PRIOR-ART.md` recording what published work already covers. Those files have demoted my
+own claims more than once, which is why they exist.
+
+**[pqc-cert-matrix](https://github.com/DannyBCarrJr/pqc-cert-matrix)** ·
+[10.5281/zenodo.21749600](https://doi.org/10.5281/zenodo.21749600)
+What happens when a post-quantum or hybrid X.509 chain meets real client software. Eight
+chain shapes against eleven client stacks, 88 cells.
+
+- Parsing never fails. All 88 cells parse, so a parse-based certificate inventory has a
+  100% false-pass rate on exactly the chains you care about.
+- Windows splits against itself: CNG validates ML-DSA chains offline while schannel cannot
+  complete a TLS handshake with them.
+- Only rustls names the algorithm it rejected. Everyone else emits trust-store-shaped
+  errors that send operators to the wrong layer.
+
+**[pqc-chain-budget](https://github.com/DannyBCarrJr/pqc-chain-budget)** ·
+[10.5281/zenodo.21846142](https://doi.org/10.5281/zenodo.21846142)
+Post-quantum signature sizes projected onto each site's own deployed chain, on 8,152 real
+chains captured from the Tranco top 10,000.
+
+- Under a drop-in ML-DSA-44 migration, 85.1% of measured sites project past the IW10
+  initial congestion window, an extra round trip per full handshake.
+- Leaf-only migration fits almost everywhere: 0.3% exceed IW10.
+- Certificate compression recovers a median 985 bytes today and roughly the same 985
+  bytes after migration, which is 7.4% of an ML-DSA-44 chain. The saving is structural,
+  and migration adds no structure.
+
+**[pqc-chain-selection](https://github.com/DannyBCarrJr/pqc-chain-selection)** ·
+[10.5281/zenodo.21911032](https://doi.org/10.5281/zenodo.21911032)
+Which certificate chain a TLS 1.3 server actually sends when the client says which
+signature algorithms it will accept. Five server stacks.
+
+- Three of five sent a chain the client had said it would not accept, and every one of
+  those handshakes completed.
+- All three are conformant. RFC 8446 makes the constraint a SHOULD and tells a server
+  with no acceptable chain to send one anyway, so a migration cannot rely on
+  `signature_algorithms_cert` to keep a chain off the wire.
+- rustls cannot honour it even if you want it to: the extension never reaches the
+  certificate resolver.
+
 ## Post-Quantum, Measured
 
 A practitioner's guide to moving real systems onto the NIST post-quantum standards
@@ -21,34 +65,16 @@ output shipped next to the claims.
   OpenSSL on one laptop.
 - Free whitepaper: [post-quantum-measured.pages.dev](https://post-quantum-measured.pages.dev)
 
-## PQC certificate compatibility matrix
-
-[**pqc-cert-matrix**](https://github.com/DannyBCarrJr/pqc-cert-matrix) answers a question
-vendors were announcing products about without publishing measurements: when a
-post-quantum or hybrid X.509 chain meets real client software, what actually happens?
-
-Eight chain shapes against eleven client stacks, 88 cells, each one a script plus captured
-output. Some of what it found:
-
-- Parsing never fails. All 88 cells parse, so a parse-based certificate inventory has a
-  100% false-pass rate on exactly the chains you care about.
-- Windows splits against itself: CNG validates ML-DSA chains offline while schannel cannot
-  complete a TLS handshake with them.
-- Your runtime decides post-quantum readiness, not your distro.
-- Only rustls names the algorithm it rejected. Everyone else emits trust-store-shaped
-  errors that send operators to the wrong layer.
-
-The repo also carries a `PRIOR-ART.md` recording what published work already covers, per
-finding. It has demoted several of the project's own claims, which is the point of keeping
-it.
-
 ## Writing
 
 [carrdigital.dev/writing](https://carrdigital.dev/writing/), accuracy-first, every article
 with a provenance section separating what I measured from what I am citing.
 
+- [The typical chain moved](https://carrdigital.dev/writing/the-typical-chain-moved/)
+- [The same 985 bytes](https://carrdigital.dev/writing/the-same-985-bytes/)
 - [How much certificate can you afford?](https://carrdigital.dev/writing/how-much-certificate-can-you-afford/)
 - [Hybrid certificates, weighed](https://carrdigital.dev/writing/hybrid-certificates-weighed/)
+- [Expiry is the only revocation that works](https://carrdigital.dev/writing/expiry-is-the-only-revocation-that-works/)
 - [The load-bearing word](https://carrdigital.dev/writing/the-load-bearing-word/)
 - [What the AI actually broke (and what it didn't)](https://carrdigital.dev/writing/what-the-ai-actually-broke/)
 
@@ -65,10 +91,12 @@ are modelled.
 [etergis.com](https://etergis.com), a digital continuity platform: encrypted storage with
 delivery to the people who should receive it, on a schedule you control.
 
-Zero-knowledge architecture, AES-256-GCM with AAD, Argon2id, X25519, Shamir secret
-sharing, and a versioned envelope format so the cryptography can be upgraded without
-migrating anyone's data by hand. The current envelope carries a hybrid X25519 and
-ML-KEM-768 key encapsulation for the owner's at-rest copy. FastAPI, Flutter, PostgreSQL,
+Zero-knowledge architecture, AES-256-GCM with AAD, Argon2id, X25519, and a versioned
+envelope format so the cryptography can be upgraded without migrating anyone's data by
+hand. The current envelope carries a hybrid X25519 and ML-KEM-768 key encapsulation for
+the owner's at-rest copy, which is the surface that matters for harvest-now-decrypt-later.
+Recipient delivery is an Argon2id passphrase wrap and is not hybrid, by decision, so I do
+not describe the product as end-to-end post-quantum. FastAPI, Flutter, PostgreSQL,
 Cloudflare, Render. Live on web, Google Play, and the App Store.
 
 Architecture and whitepaper:
@@ -80,3 +108,11 @@ Architecture and whitepaper:
 `GCP` `Wireshark`
 
 CompTIA Security+, CySA+, CASP+. Currently working through Cloud+.
+
+## Reaching me
+
+Corrections are the most useful thing you can send. If a number in any of these
+repositories disagrees when you rerun it, open an issue with the command that shows it and
+I will fix it in the open.
+
+For anything else: [carrdigital.dev](https://carrdigital.dev).
