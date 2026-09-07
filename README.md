@@ -13,7 +13,9 @@ yet shipped or measured). The labels are dull on purpose.
 Three repositories, each one a question nobody had published measurements for. Every cell
 is a script plus its captured output, versions pinned per cell, and each carries a
 `PRIOR-ART.md` recording what published work already covers. Those files have demoted my
-own claims more than once, which is why they exist.
+own claims more than once, which is why they exist. All three are indexed with their
+stamps, their citations, and the retraction record at
+[carrdigital.dev/research](https://carrdigital.dev/research/).
 
 **[pqc-cert-matrix](https://github.com/DannyBCarrJr/pqc-cert-matrix)** ·
 [10.5281/zenodo.21749600](https://doi.org/10.5281/zenodo.21749600)
@@ -29,8 +31,9 @@ chain shapes against eleven client stacks, 88 cells.
 
 **[pqc-chain-budget](https://github.com/DannyBCarrJr/pqc-chain-budget)** ·
 [10.5281/zenodo.21846142](https://doi.org/10.5281/zenodo.21846142)
-Post-quantum signature sizes projected onto each site's own deployed chain, on 8,152 real
-chains captured from the Tranco top 10,000.
+Post-quantum signature sizes projected onto each site's own deployed chain. Captured
+2026-08-07 from the Tranco top 10,000: 8,152 domains completed a handshake and 8,151
+chains parsed, which is the set the projections run on.
 
 - Under a drop-in ML-DSA-44 migration, 85.1% of measured sites project past the IW10
   initial congestion window, an extra round trip per full handshake.
@@ -70,11 +73,15 @@ output shipped next to the claims.
 [carrdigital.dev/writing](https://carrdigital.dev/writing/), accuracy-first, every article
 with a provenance section separating what I measured from what I am citing.
 
-- [The typical chain moved](https://carrdigital.dev/writing/the-typical-chain-moved/)
+- [The 87-byte certificate](https://carrdigital.dev/writing/the-87-byte-certificate/)
+- [The SCTs outweigh the certificates](https://carrdigital.dev/writing/the-scts-outweigh-the-certificates/)
+- [The 20% that passed for free](https://carrdigital.dev/writing/the-20-percent-that-passed-for-free/)
+- [Three of five sent it anyway](https://carrdigital.dev/writing/three-of-five-sent-it-anyway/)
 - [The same 985 bytes](https://carrdigital.dev/writing/the-same-985-bytes/)
-- [How much certificate can you afford?](https://carrdigital.dev/writing/how-much-certificate-can-you-afford/)
-- [Hybrid certificates, weighed](https://carrdigital.dev/writing/hybrid-certificates-weighed/)
+- [The typical chain moved](https://carrdigital.dev/writing/the-typical-chain-moved/)
 - [Expiry is the only revocation that works](https://carrdigital.dev/writing/expiry-is-the-only-revocation-that-works/)
+- [Hybrid certificates, weighed](https://carrdigital.dev/writing/hybrid-certificates-weighed/)
+- [How much certificate can you afford?](https://carrdigital.dev/writing/how-much-certificate-can-you-afford/)
 - [The load-bearing word](https://carrdigital.dev/writing/the-load-bearing-word/)
 - [What the AI actually broke (and what it didn't)](https://carrdigital.dev/writing/what-the-ai-actually-broke/)
 
@@ -110,6 +117,11 @@ Recipient delivery is an Argon2id passphrase wrap and is not hybrid, by decision
 not describe the product as end-to-end post-quantum. FastAPI, Flutter, PostgreSQL,
 Cloudflare, Render. Live on web, Google Play, and the App Store.
 
+**[etergis-recover](https://github.com/DannyBCarrJr/etergis-recover)** opens an Etergis
+export without Etergis: no account, no network, no server, and no dependency on the
+company still existing. A vault you cannot open without the vendor is a vault the vendor
+owns, so the decryptor is public and MIT.
+
 Architecture and whitepaper:
 [Etergis-Docs](https://github.com/DannyBCarrJr/Etergis-Docs).
 
@@ -118,7 +130,7 @@ Architecture and whitepaper:
 `Python` `Dart/Flutter` `PowerShell` `Bash` `OpenSSL` `Docker` `PostgreSQL` `Cloudflare`
 `GCP` `Wireshark`
 
-CompTIA Security+, CySA+, CASP+. Currently working through Cloud+.
+CompTIA Security+, CySA+, and CASP.
 
 ## Reaching me
 
