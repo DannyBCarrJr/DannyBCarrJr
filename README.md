@@ -84,6 +84,7 @@ with a provenance section separating what I measured from what I am citing.
 - [How much certificate can you afford?](https://carrdigital.dev/writing/how-much-certificate-can-you-afford/)
 - [The load-bearing word](https://carrdigital.dev/writing/the-load-bearing-word/)
 - [What the AI actually broke (and what it didn't)](https://carrdigital.dev/writing/what-the-ai-actually-broke/)
+- [The ring said Sent](https://carrdigital.dev/writing/the-ring-said-sent/)
 
 ## Tools
 
@@ -121,6 +122,10 @@ Cloudflare, Render. Live on web, Google Play, and the App Store.
 export without Etergis: no account, no network, no server, and no dependency on the
 company still existing. A vault you cannot open without the vendor is a vault the vendor
 owns, so the decryptor is public and MIT.
+
+The first write-up from running it: [The ring said Sent](https://carrdigital.dev/writing/the-ring-said-sent/),
+on a countdown that reported a delivery during the window in which it could still have
+been stopped, and where the clock has to live so that cannot happen.
 
 Architecture and whitepaper:
 [Etergis-Docs](https://github.com/DannyBCarrJr/Etergis-Docs).
