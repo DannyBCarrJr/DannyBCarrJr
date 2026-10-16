@@ -54,6 +54,9 @@ signature algorithms it will accept. Five server stacks.
   `signature_algorithms_cert` to keep a chain off the wire.
 - rustls cannot honour it even if you want it to: the extension never reaches the
   certificate resolver.
+- OpenSSL honours it one certificate deep. The check reads the leaf's signature and
+  never the intermediate's, which is where the implementers' own cross-signing paper
+  found the gap.
 
 ## Post-Quantum, Measured
 
@@ -73,6 +76,7 @@ output shipped next to the claims.
 [carrdigital.dev/writing](https://carrdigital.dev/writing/), accuracy-first, every article
 with a provenance section separating what I measured from what I am citing.
 
+- [The check stops at the leaf](https://carrdigital.dev/writing/the-check-stops-at-the-leaf/)
 - [The 87-byte certificate](https://carrdigital.dev/writing/the-87-byte-certificate/)
 - [The SCTs outweigh the certificates](https://carrdigital.dev/writing/the-scts-outweigh-the-certificates/)
 - [The 20% that passed for free](https://carrdigital.dev/writing/the-20-percent-that-passed-for-free/)
