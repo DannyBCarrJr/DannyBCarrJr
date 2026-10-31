@@ -69,13 +69,14 @@ output shipped next to the claims.
 - **[post-quantum-measured-lab](https://github.com/DannyBCarrJr/post-quantum-measured-lab)**
   is the runnable companion: every Verified number in the book, reproducible on stock
   OpenSSL on one laptop.
-- Free whitepaper: [post-quantum-measured.pages.dev](https://post-quantum-measured.pages.dev)
+- Free whitepaper: [whitepaper.carrdigital.dev](https://whitepaper.carrdigital.dev)
 
 ## Writing
 
 [carrdigital.dev/writing](https://carrdigital.dev/writing/), accuracy-first, every article
 with a provenance section separating what I measured from what I am citing.
 
+- [Two clocks on the same internet](https://carrdigital.dev/writing/two-clocks-on-the-same-internet/)
 - [The check stops at the leaf](https://carrdigital.dev/writing/the-check-stops-at-the-leaf/)
 - [The 87-byte certificate](https://carrdigital.dev/writing/the-87-byte-certificate/)
 - [The SCTs outweigh the certificates](https://carrdigital.dev/writing/the-scts-outweigh-the-certificates/)
